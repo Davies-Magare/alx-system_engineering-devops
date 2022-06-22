@@ -8,3 +8,4 @@ script 5 lists files with long format, user id and hidden files
 script 6 creates a new directory in /tmp
 script 7 moves aflie into a directory
 script 8 deletes betty file
+script 9 deletes a directory

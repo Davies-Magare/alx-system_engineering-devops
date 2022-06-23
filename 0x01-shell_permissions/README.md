@@ -9,3 +9,4 @@ Script adds more permissions to owner and users
 Script 10 makes hello permissions similar to olleh file
 Script 11 updates directories not files
 Script 12 creates a directory with custom prestet permissions
+Script 13 changes the file ownership group

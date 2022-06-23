@@ -6,3 +6,4 @@ script 4 makes an empty file hello
 Script 5 gives owner permission to execute
 Script 6 adds more permissions to the file hello
 Script adds more permissions to owner and users
+Script 10 makes hello permissions similar to olleh file

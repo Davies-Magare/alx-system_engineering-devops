@@ -11,3 +11,4 @@ script 8 deletes betty file
 script 9 deletes a directory
 Script 10 reverts back to previous directory
 11 opens 3 directories
+Script 18 displays files sorted

@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod *dir 744
+chmod ugo+x */

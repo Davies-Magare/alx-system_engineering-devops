@@ -4,3 +4,4 @@ Script 2 displays current user groups
 script 3 makes betty the owner of the file
 script 4 makes an empty file hello
 Script 5 gives owner permission to execute
+Script 6 adds more permissions to the file hello

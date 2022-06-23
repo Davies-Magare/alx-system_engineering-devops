@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod *dir ogu+x
+chmod *dir 744

@@ -10,3 +10,4 @@ Script 10 deletes all files of .js extension
 Script 11 displays the number of files in the current directory
 Script 12 displays the newest files
 Script 13 sorts a list
+14 filters out files with root in them

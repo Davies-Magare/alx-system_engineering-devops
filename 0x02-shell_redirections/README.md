@@ -18,3 +18,4 @@ Script 18 displays files startingwith any letter
 Script 19 replaces characters with tr
 Script 20 deletes specific letters
 21 reverses text
+22 Prints all users and home directories

@@ -12,3 +12,4 @@ Script 12 displays the newest files
 Script 13 sorts a list
 14 filters out files with root in them
 15 counts lines with pattern
+grep with multiple arguments

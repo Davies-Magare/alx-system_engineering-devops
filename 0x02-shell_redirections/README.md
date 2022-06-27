@@ -14,3 +14,4 @@ Script 13 sorts a list
 15 counts lines with pattern
 grep with multiple arguments
 17 prints files without the pattern
+Script 18 displays files startingwith any letter

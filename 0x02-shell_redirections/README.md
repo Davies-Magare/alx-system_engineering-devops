@@ -2,3 +2,4 @@
 Script 3 prints the content of two files
 Script 4 displays last 10 lines of /etc/passwd
 Script 5 displays the first 5 lines
+Script 6 reads the third line of a file

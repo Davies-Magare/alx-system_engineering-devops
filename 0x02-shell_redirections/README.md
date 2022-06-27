@@ -8,3 +8,4 @@ Script 8 prints file status into a file
 Script 9 duplicates last line of a file
 Script 10 deletes all files of .js extension
 Script 11 displays the number of files in the current directory
+Script 12 displays the newest files

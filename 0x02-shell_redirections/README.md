@@ -15,3 +15,4 @@ Script 13 sorts a list
 grep with multiple arguments
 17 prints files without the pattern
 Script 18 displays files startingwith any letter
+Script 19 replaces characters with tr

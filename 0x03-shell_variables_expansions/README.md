@@ -3,3 +3,4 @@ Script 0 creates an alias
 Script 1 greets the user
 2 adds a directory to PATH
 Script 3 counts the number of files in PATH
+Script 4 lists all environmental variables in the working directory

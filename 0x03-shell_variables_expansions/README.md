@@ -10,3 +10,4 @@ Script 7 creates a global variable
 Script 8 adds 128 to the value of a variable
 Script 9 divides two variables
 Script 10 deals with powers
+Script 11 changes binary to decimal

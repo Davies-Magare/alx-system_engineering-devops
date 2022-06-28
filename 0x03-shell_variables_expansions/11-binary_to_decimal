@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((BINARY#FF))
+echo $((2#BINARY))

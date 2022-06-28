@@ -7,3 +7,4 @@ Script 4 lists all environmental variables in the working directory
 5 prints all local and environmental functions and variables
 script 6 creates a local variable
 Script 7 creates a global variable
+Script 8 adds 128 to the value of a variable

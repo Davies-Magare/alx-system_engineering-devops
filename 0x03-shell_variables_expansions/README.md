@@ -5,3 +5,4 @@ Script 1 greets the user
 Script 3 counts the number of files in PATH
 Script 4 lists all environmental variables in the working directory
 5 prints all local and environmental functions and variables
+script 6 creates a local variable

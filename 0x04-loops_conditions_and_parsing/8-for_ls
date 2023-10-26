@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#8_for_ls: prints the contents of the
+#current directory
+mapfile -t array < <(find . -type f | cut -d'-' -f2)
+for file in "${array[@]}"
+do
+	echo "$file"
+done

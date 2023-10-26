@@ -2,7 +2,7 @@
 #4-if_9_say_hi: prints best school 10 times
 #and hi on the 9th iteration
 i=0
-until [ $i -gt 9 ]
+while [ $i -ne 10 ]
 do
 	echo "Best School"
 	if [ $i -eq 8 ]

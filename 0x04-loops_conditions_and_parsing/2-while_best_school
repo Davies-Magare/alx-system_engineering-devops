@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #2-while_best_school: prints "best school" five times
 i=0
-while [ $i -ne 5 ]
+while [ $i -ne 10 ]
 do
 	echo "Best School"
 	i=$((i + 1))

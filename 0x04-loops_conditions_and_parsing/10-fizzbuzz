@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#10-fizzbuzz: prints numbers from 1 to 100
+#prints "Fizz" when number is multiple of 3
+#prints "Buzz" when number is multiple of 5
+#prints "FizzBuzz" when number is multiple of 3 and 5
+#otherwise displays number
+i=1
+while [ $i -ne 101 ]
+do
+	if [ $((i % 3)) -eq 0 ]
+	then
+		if [ $((i % 5)) -eq 0 ]
+		then
+			echo "FizzBuzz"
+		else
+			echo "Fizz"
+		fi
+	elif [ $((i % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$i"
+	fi
+	i=$((i + 1))
+done

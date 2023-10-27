@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#5-don't_stop_me_now - kills a process
+kill "$(pgrep bash | tail -n 1)"

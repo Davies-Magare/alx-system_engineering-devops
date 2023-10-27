@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #2-show_your_bash_pid - displays the lines containing
 #the bash word
-ps -aux --forest | grep {{'bash'}}
+ps -aux --forest | grep 'bash'
+# shellcheck disable=SC2009

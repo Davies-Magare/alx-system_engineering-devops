@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#5-is_the_host_on_the_network: pings
+#an ip address
+if [ $# -lt 1 ]
+then
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+<<<<<<< HEAD
+	ping -c 5 "$1"
+=======
+	ping -c 5 $1
+>>>>>>> e47f9e06f3351277ad0f35db21f72a4f87e7ff4c
+fi

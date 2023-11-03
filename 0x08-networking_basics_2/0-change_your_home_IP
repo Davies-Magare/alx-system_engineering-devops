@@ -2,5 +2,5 @@
 #0-change_your_home_IP: configures an ubuntu server.
 cp /etc/hosts ~/hosts.new
 echo "localhost	127.0.0.2" >> ~/hosts.new
-echo "facebook.com  8.8.8.8/g" >> ~/hosts.new
+echo "facebook.com  8.8.8.8" >> ~/hosts.new
 cp -f ~/hosts.new /etc/hosts

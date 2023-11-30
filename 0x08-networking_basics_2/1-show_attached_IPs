@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+ifconfig -a | grep 'netmask' | cut -d 'i' -f 2 | cut -d ' ' -f 2
+

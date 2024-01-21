@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#This script configures remote server for login
+#without password
+ssh-copy-id -i ~/.ssh/school.pub ubuntu@107.21.36.89
+ssh -o PasswordAuthentication=no ubuntu@107.21.36.89

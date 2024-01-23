@@ -3,7 +3,7 @@
 #ssh configuration file
 
 Host myserver
-  HostName 107.21.36.89
+  HostName 35.153.231.50
   User ubuntu
   IdentityFile ~/.ssh/school
   PasswordAuthentication no

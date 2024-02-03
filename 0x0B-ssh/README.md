@@ -1,1 +1,0 @@
-Ssh and server configuration

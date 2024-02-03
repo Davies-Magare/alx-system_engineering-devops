@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-#This script is a copy of the 
-#ssh configuration file
-
-Host myserver
-  HostName 35.153.231.50
-  User ubuntu
-  IdentityFile ~/.ssh/school
-  PasswordAuthentication no

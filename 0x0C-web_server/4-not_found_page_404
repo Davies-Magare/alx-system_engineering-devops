@@ -15,7 +15,8 @@ echo "server {
    location / {
      return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
   }
-   error_page 404 /custom_404.html {
+   error_page 404 /custom_404.html;
+   location = /custom_404.html {
     root /var/www/html;
     internal;
   }

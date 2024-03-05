@@ -12,12 +12,11 @@ echo "server {
    root /var/www/html;
    index ret_file.html;
 
-   location / {
+   location /redirect_me {
      return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
   }
    error_page 404 /custom_404.html;
    location = /custom_404.html {
-    root /var/www/html;
     internal;
   }
 }" > /etc/nginx/sites-available/default

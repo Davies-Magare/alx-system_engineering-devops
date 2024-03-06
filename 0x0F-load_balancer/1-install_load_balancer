@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#install haproxy
+apt-get install --no-install-recommends -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.9
+apt-get install -y haproxy=2.9.\*
+#create backup
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/backup.cfg
+#add configuration blocks
+echo "frontend http_front
+  mode http
+  bind :80
+  stats uri /haproxy?stats
+  default_backend web_servers
+backend web_servers
+  mode http
+  balance roundrobin
+  server 79879-web-01 100.26.174.14:80 check
+  server 79879-web-02 35.174.208.95:80 check" >> /etc/haproxy/haproxy.cfg
+#allow management by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+service haproxy restart;

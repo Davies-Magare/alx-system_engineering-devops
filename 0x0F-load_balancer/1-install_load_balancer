@@ -14,8 +14,8 @@ echo "frontend http_front
 backend web_servers
   mode http
   balance roundrobin
-  server 79879-web-01 100.26.174.14:80 check
-  server 79879-web-02 35.174.208.95:80 check" >> /etc/haproxy/haproxy.cfg
+  server 79879-web-01 34.224.62.243:80 check
+  server 79879-web-02 54.90.55.235:80 check" >> /etc/haproxy/haproxy.cfg
 #allow management by init script
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 service haproxy restart;

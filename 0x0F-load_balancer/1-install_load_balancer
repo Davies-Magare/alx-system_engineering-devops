@@ -3,6 +3,7 @@
 apt-get install --no-install-recommends -y software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.9
 apt-get install -y haproxy=2.9.\*
+sudo service haproxy start
 #create backup
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/backup.cfg
 #add configuration blocks
@@ -18,4 +19,4 @@ backend web_servers
   server 79879-web-02 54.90.55.235:80 check" >> /etc/haproxy/haproxy.cfg
 #allow management by init script
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
-service haproxy restart;
+service haproxy reload;

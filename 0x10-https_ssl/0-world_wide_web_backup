@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+print_info() {
+	local sub_dom=$2
+	local dom=$1
+	
+	if [ $sub_dom != 'all' ]; then
+		local my_str=$(dig $sub_dom.$dom | grep -A1 'ANSWER SECTION:' | tail -1)
+		local record=$(echo "$my_str" | cut -f 4)
+		local ip=$(echo "$my_str" | cut -f 5)	
+		echo "$sub_dom $record $ip" |awk '{ print "This subdomain " $1 " is a " $2 " record and points to " $3 }'
+
+	fi
+}
+
+if [ ! -z "$1" ]; then
+    if [ ! -z "$2" ]; then
+        print_info "$1" "$2"
+    else
+        print_info "$1" "all"
+    fi
+fi

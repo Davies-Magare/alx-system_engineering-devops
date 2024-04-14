@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Query domain and its subdomains
 print_info() {
 	local sub_dom
 	local dom

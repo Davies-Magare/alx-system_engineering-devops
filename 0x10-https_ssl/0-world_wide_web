@@ -14,7 +14,7 @@ print_info() {
 	my_str=$(dig "$sub_dom.$dom" | grep -A1 'ANSWER SECTION:' | tail -1)
 	record=$(echo "$my_str" | cut -f 4)
 	ip=$(echo "$my_str" | cut -f 5)	
-	echo "$sub_dom $record $ip" |awk '{ print "This subdomain " $1 " is a " $2 " record and points to " $3 }'
+	echo "$sub_dom $record $ip" |awk '{ print "The subdomain " $1 " is a " $2 " record and points to " $3 }'
 
 
 }

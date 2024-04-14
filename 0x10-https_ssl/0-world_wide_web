@@ -8,13 +8,9 @@ print_info() {
 	dom=$1
 	
 	local my_str
-	local record
-	local ip
-
+	
 	my_str=$(dig "$sub_dom.$dom" | grep -A1 'ANSWER SECTION:' | tail -1)
-	record=$(echo "$my_str" | cut -f 4)
-	ip=$(echo "$my_str" | cut -f 5)	
-	echo "$sub_dom $record $ip" |awk '{ print "The subdomain " $1 " is a " $2 " record and points to " $3 }'
+	echo "$my_str" |awk -v subd="$sub_dom" '{ print "The subdomain " subd " is a " $4 " record and points to " $5 }'
 
 
 }

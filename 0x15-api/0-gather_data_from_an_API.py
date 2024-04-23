@@ -16,10 +16,10 @@ def gather_data():
     dicts = response.json()
     name_dict = response_name.json()
     comp = [a_dict for a_dict in dicts if a_dict.get('completed') is True]
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(name_dict[0].get('name'), len(comp), len(dicts)))
     for a_dict in comp:
-        print("\t{}".format(a_dict.get('title')))
+        print("\t {}".format(a_dict.get('title')))
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 server {
    listen 80;
    listen [::]:80;
-   server_name airbnb_onepage;
+   server_name 34.239.249.95;
 
    root /var/www/html;
    index onepage;

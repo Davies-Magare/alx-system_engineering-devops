@@ -1,37 +1,34 @@
 #!/usr/bin/python3
 
 """
-Retrieve the user metrics of a given subreddit
+Find the number of users in a subreddit
 """
-
 import json
 import requests
 import sys
 
 
 def number_of_subscribers(subreddit):
-    """Return the number of subscribers of a given subreddit"""
+    """Retrieve the number of subscribers of subreddit"""
 
-    app_id = 'b-pGh9ktJwVslAVVrwsW7A'
-    secret_key = 'Vm6PQTUYOj3G1LOhZ4mO05fGX4ILvQ'
-    auth = requests.auth.HTTPBasicAuth(app_id, secret_key)
-    username = 'Dry-Birthday8239'
-    password = 'Biochemist79'
+    CLIENT_ID = "b-pGh9ktJwVslAVVrwsW7A"
+    SECRET_KEY = "Vm6PQTUYOj3G1LOhZ4mO05fGX4ILvQ"
+
+    auth = requests.auth.HTTPBasicAuth(CLIENT_ID, SECRET_KEY)
     data = {
             'grant_type': 'password',
-            'username': username,
-            'password': password
+            'username': 'Dry-Birthday8239',
+            'password': 'Biochemist79'
     }
-    headers = {'User-Agent': 'ApiProject/001'}
-    result = requests.post('https://www.reddit.com/api/v1/access_token',
-                           auth=auth, data=data, headers=headers)
+    headers = {'User-Agent': 'MyAPI/0.01'}
 
-    access_token = result.json()['access_token']
-
-    headers.update({"Authorization": f"bearer {access_token}"})
-    response = requests.get('https://oauth.reddit.com/r/{}/about'
-                            .format(sys.argv[1]), headers=headers)
-
-    if 'subscribers' in response.json()['data']:
-        return response.json()['data']['subscribers']
+    res = requests.post('https://www.reddit.com/api/v1/access_token',
+                        auth=auth, data=data, headers=headers)
+    TOKEN = res.json()['access_token']
+    headers = {**headers, **{'Authorization': f'bearer {TOKEN}'}}
+    subreddit_info = requests.get('https://oauth.reddit.com/r/{}/about'
+                                  .format(sys.argv[1]), headers=headers,
+                                  allow_redirects=False)
+    if subreddit_info.status_code == 200:
+        return (subreddit_info.json()['data']['subscribers'])
     return 0

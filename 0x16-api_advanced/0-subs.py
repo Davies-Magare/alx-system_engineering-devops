@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+"""
+Query the reddit API
+"""
+
 import json
 import requests
 

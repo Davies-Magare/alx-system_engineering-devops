@@ -1,34 +1,36 @@
 #!/usr/bin/python3
-
-"""
-Find the number of users in a subreddit
-"""
-import json
-import requests
-import sys
-
+import requests, json
 
 def number_of_subscribers(subreddit):
-    """Retrieve the number of subscribers of subreddit"""
+    """
+    Get Reddit api authentication and query the number of 
+    subscribers of a given subreddit"""
+    
+    client_id = "Ze7ucSghCV5LdlCn5RgbTw"
+    secret_key = "R8ti_aHeU_Ag1CgAiauLTwPcsdv5fg"
+    username = "Ashamed_Community_29"
+    password = "Biochemist79"
 
-    CLIENT_ID = "b-pGh9ktJwVslAVVrwsW7A"
-    SECRET_KEY = "Vm6PQTUYOj3G1LOhZ4mO05fGX4ILvQ"
 
-    auth = requests.auth.HTTPBasicAuth(CLIENT_ID, SECRET_KEY)
+    auth = requests.auth.HTTPBasicAuth(client_id, secret_key)
+
     data = {
-            'grant_type': 'password',
-            'username': 'Dry-Birthday8239',
-            'password': 'Biochemist79'
+        'grant_type': 'password',
+        'username': username,
+        'password': password
     }
-    headers = {'User-Agent': 'MyAPI/0.01'}
+    headers = {'User-Agent': 'MyAPI-0.0.1'}
 
-    res = requests.post('https://www.reddit.com/api/v1/access_token',
-                        auth=auth, data=data, headers=headers)
-    TOKEN = res.json()['access_token']
-    headers = {**headers, **{'Authorization': f'bearer {TOKEN}'}}
-    subreddit_info = requests.get('https://oauth.reddit.com/r/{}/about'
-                                  .format(sys.argv[1]), headers=headers,
-                                  allow_redirects=False)
-    if subreddit_info.status_code == 200:
-        return (subreddit_info.json()['data']['subscribers'])
+    result = requests.post('https://www.reddit.com/api/v1/access_token',
+            auth=auth, data=data, headers=headers)
+    token = result.json()['access_token']
+    headers['Authorization'] = f'bearer {token}'
+    response = requests.get(f'https://oauth.reddit.com/r/{subreddit}/about', 
+                            headers=headers, allow_redirects=False)
+    
+    #print(json.dumps(response.json(), indent=4))
+
+    if response.status_code == 200:
+        return response.json()['data']['subscribers']
     return 0
+    #number_of_subscribers('programming')

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#Run the whoamI command under the user gien as argument
+
+su  "$1" -c 'whoami' requires authentication
+
+#sudo -u "$1" command "whoami"

@@ -1,0 +1,22 @@
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name 52.91.126.161;
+
+        root /home/ubuntu;
+        index test;
+
+        location /airbnb-onepage/ {
+                proxy_pass  http://localhost:5000;
+        }
+	location ~ ^/airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
+		proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+	}
+}
+
